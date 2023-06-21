@@ -9,7 +9,6 @@ if [ $head -lt 10 ]; then
 else
     if [ ! -d ./$head ]; then
         mkdir $head
-        echo "hi.."
     fi
     cd $head
 fi
