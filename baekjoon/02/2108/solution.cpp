@@ -44,13 +44,17 @@ int main(){
     int curNumber = -4001;
     vector<Data> datas;
     Data data;
+
     for(auto i: nums){
         if(i != curNumber){
+            // find different number
             if(curNumber != -4001){
+                // push last number
                 data.number = curNumber;
                 data.frequency = curFrequency;
                 datas.push_back(data);
             }
+            // reset variables
             curNumber = i;
             curFrequency = 1;
         }
@@ -58,6 +62,7 @@ int main(){
             curFrequency++;
         }
     }
+    // push final number
     data.number = curNumber;
     data.frequency = curFrequency;
     datas.push_back(data);
@@ -65,6 +70,8 @@ int main(){
     sort(datas.begin(), datas.end(), comp);
 
     int mode;
+
+    // multiple modes
     if(datas.size() > 1 && datas[0].frequency == datas[1].frequency)
         mode = datas[1].number;
     else 
