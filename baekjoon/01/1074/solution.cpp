@@ -9,7 +9,6 @@ void Z(int N, int row, int col, int r, int c, int count){
         return;
     }
 
-
     int stride = 1 << (N - 1);
 
     if(r < row+stride && c < col+stride){
@@ -42,7 +41,6 @@ void Z(int N, int row, int col, int r, int c, int count){
 int main(){
     int N, r, c;
     cin >> N >> r >> c;
-
 
     Z(N, 0, 0, r, c, 0);
     
