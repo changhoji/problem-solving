@@ -1,4 +1,4 @@
-# 1074: Z
+# 1074번: Z
 
 [문제 바로가기](https://www.acmicpc.net/problem/1074)
 
