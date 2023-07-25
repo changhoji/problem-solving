@@ -58,11 +58,11 @@ int main(){
         }
     }
 
-    vector<int> arr(1);
-    vector<int> minLast(N+1, INF);
-    vector<int> location(N+1);
+    vector<int> arr;
+    vector<int> minLast(N, INF);
+    vector<int> location;
 
-    int len = 0;
+    int lisLength = 0;
 
     Node *cur = node[0];
     int i = 0;
@@ -70,26 +70,27 @@ int main(){
         arr.push_back(cur->num);
         i++;
 
-        int index = lower_bound(minLast.begin()+1, minLast.end(), cur->num) - minLast.begin();
+        int index = lower_bound(minLast.begin(), minLast.end(), cur->num) - minLast.begin();
 
         minLast[index] = cur->num;
-        location[i] = index;
+        location.push_back(index+1);
 
-        len = max(len, index);
+        lisLength = max(lisLength, index+1);
     }
 
-    vector<int> lis(len+1);
+    vector<int> lis(lisLength+1);
     lis[0] = 0;
-    for(int i = location.size()-1; i >= 1; i--){
+
+    int len = lisLength;
+    for(int i = location.size()-1; i >= 0; i--){
         if(location[i] == len){
-            // printf("lis[%d] = %d\n", len, arr[i]);
             lis[len--] = arr[i];
         }
     }
 
-    cout << N - lis.size() + 1 << '\n';
+    cout << N - lisLength << '\n';
     int now;
-    for(int i = lis.size()-1; i >= 1; i--){
+    for(int i = lisLength; i >= 1; i--){
         now = lis[i]-1;
 
         while(now > lis[i-1]){
@@ -98,7 +99,7 @@ int main(){
         }
     }
 
-    for(int now = lis[lis.size()-1]+1; now <= N; now++){
+    for(int now = lis.back()+1; now <= N; now++){
         cout << "B " << now << " " << now-1 << "\n";
     }
 
