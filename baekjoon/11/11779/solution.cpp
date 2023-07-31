@@ -6,14 +6,14 @@ using namespace std;
 
 #define INF 987654321
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
-void Dijkstra(int start, vector<vector<pii>> &adj, 
+void Dijkstra(int start, vector<vector<pll>> &adj, 
               vector<int> &distance, vector<vector<int>> &route){
     distance[start] = 0;
     route[start].push_back(start);
 
-    priority_queue<pii, vector<pii>, greater<pii>> pq;
+    priority_queue<pll, vector<pll>, greater<pll>> pq;
     pq.push(make_pair(0, start));
 
     while(!pq.empty()){
@@ -43,7 +43,7 @@ int main(){
     int n, m;
     cin >> n >> m;
 
-    vector<vector<pii>> adj(n+1);
+    vector<vector<pll>> adj(n+1);
     vector<int> distance(n+1, INF);
     vector<vector<int>> route(n+1);
 

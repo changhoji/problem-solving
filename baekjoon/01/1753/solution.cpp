@@ -5,10 +5,10 @@ using namespace std;
 
 #define INF 987654321
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
-void Dijkstra(int start, vector<vector<pii>> &adj, vector<int> &distance){
-    priority_queue<pii, vector<pii>, greater<pii>> pq;
+void Dijkstra(int start, vector<vector<pll>> &adj, vector<int> &distance){
+    priority_queue<pll, vector<pll>, greater<pll>> pq;
 
     pq.push(make_pair(0, start));
 
@@ -31,7 +31,7 @@ int main(){
     int V, E, K;
     cin >> V >> E >> K;
 
-    vector<vector<pii>> adj(V+1);
+    vector<vector<pll>> adj(V+1);
     vector<int> distance(V+1, INF);
     distance[K] = 0;
 

@@ -40,7 +40,7 @@ void Union(int a, int b){
     }
 }
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
 int main(){
     ios::sync_with_stdio(false);
@@ -55,7 +55,7 @@ int main(){
     }
 
     priority_queue<Edge, vector<Edge>, Compare> pq;
-    vector<pii> adj[1001];
+    vector<pll> adj[1001];
 
     int A, B, C;
     for(int i = 0; i < M; i++){

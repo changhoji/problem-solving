@@ -5,7 +5,7 @@ using namespace std;
 
 #define INF 987654321
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
 int main(){
     cin.tie(0)->ios::sync_with_stdio(false);
@@ -13,7 +13,7 @@ int main(){
     int N;
     cin >> N;
 
-    vector<pii> lines;
+    vector<pll> lines;
 
     int a, b;
     for(int i = 0; i < N; i++){

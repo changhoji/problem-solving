@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
 int main(){
     cin.tie(0)->ios::sync_with_stdio(false);
@@ -11,7 +11,7 @@ int main(){
     int N;
     cin >> N;
 
-    vector<pii> vec;
+    vector<pll> vec;
 
     int x, y;
     for(int i = 0; i < N; i++){

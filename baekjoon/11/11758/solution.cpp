@@ -2,18 +2,18 @@
 #include <utility>
 using namespace std;
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
 #define x first
 #define y second
 
 int main(){
-    pii point[3];
+    pll point[3];
     for(int i = 0; i < 3; i++){
         cin >> point[i].x >> point[i].y;
     }
 
-    pii vec1, vec2;
+    pll vec1, vec2;
     vec1 = make_pair(point[1].x-point[0].x, point[1].y-point[0].y);
     vec2 = make_pair(point[2].x-point[1].x, point[2].y-point[1].y);
 

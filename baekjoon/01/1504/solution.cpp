@@ -6,17 +6,17 @@ using namespace std;
 
 #define INF 987654321
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
-pii Dijkstra(int N, int from, int v1, int v2, vector<vector<pii>> &adj){
+pll Dijkstra(int N, int from, int v1, int v2, vector<vector<pll>> &adj){
     vector<int> dist(N+1, INF);
     dist[from] = 0;
 
-    priority_queue<pii, vector<pii>, greater<pii>> pq;
+    priority_queue<pll, vector<pll>, greater<pll>> pq;
     pq.push(make_pair(0, from));
 
     while(!pq.empty()){
-        pii cur = pq.top();
+        pll cur = pq.top();
         pq.pop();
 
         int d = cur.first;
@@ -40,7 +40,7 @@ int main(){
     int N, E;
     cin >> N >> E;
 
-    vector<vector<pii>> adj(N+1);
+    vector<vector<pll>> adj(N+1);
 
     int a, b, c;
     for(int i = 0; i < E; i++){
@@ -52,7 +52,7 @@ int main(){
     int v1, v2;
     cin >> v1 >> v2;
 
-    pii temp1 = Dijkstra(N, 1, v1, v2, adj), temp2 = Dijkstra(N, N, v1, v2, adj);
+    pll temp1 = Dijkstra(N, 1, v1, v2, adj), temp2 = Dijkstra(N, N, v1, v2, adj);
     int connect = Dijkstra(N, v1, v1, v2, adj).second;
 
     int start[2] = { temp1.first, temp1.second }; // 1 <-> v1, 1 <-> v2

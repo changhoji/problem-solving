@@ -6,13 +6,13 @@ using namespace std;
 #define r first
 #define c second
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
 int N;
 int result = 0;
 int board[10][10];
 
-pii NextPos(pii p){
+pll NextPos(pll p){
     if(p.r == N) return {-1, -1};
     if(++p.c == N){
         p.c = 0;
@@ -46,7 +46,7 @@ bool PossiblePos(int row, int col){
 void BackTracking(int depth, int r, int c){
     result = max(result, depth);
 
-    pii now = {r, c};
+    pll now = {r, c};
     while((now = NextPos(NextPos(now))).r != -1){
         if(N%2 == 0){
             if(now.c == 0) now.c++;

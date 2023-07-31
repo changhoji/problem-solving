@@ -3,7 +3,7 @@
 #include <map>
 using namespace std;
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
 int main(){
     cin.tie(0) -> ios::sync_with_stdio(false);
@@ -17,8 +17,8 @@ int main(){
     for(int tc = 1; tc <= T; tc++){
         cin >> k;
 
-        priority_queue<pii> maxHeap;
-        priority_queue<pii, vector<pii>, greater<pii>> minHeap;
+        priority_queue<pll> maxHeap;
+        priority_queue<pll, vector<pll>, greater<pll>> minHeap;
         int heapSize = 0;
 
         map<int, bool> deleted;
@@ -37,7 +37,7 @@ int main(){
                     continue;
 
                 if(x == 1){
-                    pii cur = maxHeap.top();
+                    pll cur = maxHeap.top();
                     while(deleted[cur.second]){
                         maxHeap.pop();
                         cur = maxHeap.top();
@@ -47,7 +47,7 @@ int main(){
                     heapSize--;
                 }
                 else{
-                    pii cur = minHeap.top();
+                    pll cur = minHeap.top();
                     while(deleted[cur.second]){
                         minHeap.pop();
                         cur = minHeap.top();
@@ -61,7 +61,7 @@ int main(){
 
         if(heapSize == 0) cout << "EMPTY\n";
         else{
-            pii cur = minHeap.top();
+            pll cur = minHeap.top();
             while(deleted[cur.second]){
                 minHeap.pop();
                 cur = minHeap.top();

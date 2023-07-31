@@ -11,10 +11,10 @@ using namespace std;
 int dr[] = {-1, 1, 0, 0};
 int dc[] = {0, 0, -1, 1};
 
-typedef pair<int, int> pii;
+typedef pair<int, int> pll;
 
 int map[1000][1000];
-pii par[1000][1000];
+pll par[1000][1000];
 
 int main(){
     int N, M;
@@ -33,13 +33,13 @@ int main(){
         for(int j = 0; j < M; j++){
             if(map[i][j] != 0) continue;
             int size = 0;
-            queue<pii> visited;
-            queue<pii> q;
+            queue<pll> visited;
+            queue<pll> q;
 
             q.push(make_pair(i, j));
             map[i][j] = 1;
 
-            pii p = make_pair(i, j);
+            pll p = make_pair(i, j);
 
             while(!q.empty()){
                 auto cur = q.front();
@@ -75,7 +75,7 @@ int main(){
     for(int i = 0; i < N; i++){
         for(int j = 0; j < M; j++){
             if(map[i][j] == WALL){
-                vector<pii> side;
+                vector<pll> side;
                 int sum = 1;
                 for(int k = 0; k < 4; k++){
                     int nr = i+dr[k];
